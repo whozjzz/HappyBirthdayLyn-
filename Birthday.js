@@ -134,28 +134,14 @@ function animateFireworks() {
   requestAnimationFrame(animateFireworks);
 }
 
-// Start fireworks animation when the button is clicked
-document.getElementById('startFireworks').addEventListener('click', function () {
-  // Change the background color to black
-  document.body.style.backgroundColor = 'black';
+// Trigger fireworks on "Happy Birthday" text click
+document.querySelector('.neon-button').addEventListener('click', () => {
+  document.body.style.backgroundColor = 'black'; // Change background color
 
+  // Start fireworks animation
   if (!fireworksAnimationStarted) {
     fireworksAnimationStarted = true;
     setInterval(createFireworks, 700);
     animateFireworks();
-  }
-});
-
-const body = document.body;
-// Trigger background and button transitions
-startFireworksButton.addEventListener('click', () => {
-  // Add the "active" class to the body
-  body.classList.add('active');
-
-  // Start fireworks animation
-  if (!fireworksAnimationStarted) {
-      fireworksAnimationStarted = true;
-      setInterval(createFireworks, 700);
-      animateFireworks();
   }
 });
